@@ -1,0 +1,327 @@
+/* Definição de Variáveis */
+:root {
+  /* Definição de cores principais para o design */
+  --primary-color: #28bbff;
+  --secondary-color: rgba(7, 192, 115, 0.932);
+  --third-color:rgb(32, 48, 70);
+  --forth-color:rgb(0, 119, 255);
+  --background-color: #bfe5ff;
+  --text-color: #333;
+  --white-color: #eff6ff;
+  --heading-color: #23a7ff;
+  --border-color: #ccc;
+  --shadow-color: rgba(0, 0, 0, 0.082);
+  --hover-bg: #575757;
+  
+  /* Definição de tamanhos de fonte */
+  --font-size-base: 16px;
+  --font-size-small: 14px;
+  --font-size-large: 18px;
+}
+
+/* Reset e Box Model */
+* {
+  /* Reset de margens e padding, e configuração do box-sizing para garantir uma distribuição consistente */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  margin-top: 60px; /* Ajuste conforme necessário */
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  padding-top: 60px; /* Espaço para o menu fixo */
+  display: flex; /* Usar flexbox para layout */
+  flex-direction: column; /* Organiza os elementos na vertical */
+  align-items: center; /* Centraliza o conteúdo */
+  justify-content: flex-start; /* Alinha o conteúdo no topo */
+  min-height: 100vh;
+
+  /* Adicionando a imagem de fundo */
+  background-image: url('imagens/Fundo3.png');
+  background-size: cover;  /* Faz com que a imagem cubra todo o corpo */
+  background-position: center;  /* Centraliza a imagem */
+  background-attachment: fixed;  /* Faz a imagem fixar-se no fundo ao rolar a página */
+}
+
+
+/* Título e Cabeçalho */
+h1, h2 {
+  text-align: center;
+  color: #000000d3;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+
+/* Navegação */
+nav {
+  /* Estilo para a barra de navegação fixa no topo */
+  background-color: var(--heading-color);
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 1px 7px rgba(51, 51, 51, 0.568); /* sombra para a navegação */
+}
+
+nav ul {
+  /* Configuração para a lista de itens de navegação */
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  /* Estilo para cada item de navegação */
+  margin: 0 18px;
+}
+
+nav ul li a {
+  /* Estilo para os links de navegação */
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 12px 20px;
+  border-radius: 40px;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Transição suave */
+}
+
+nav ul li a:hover {
+  /* Efeito de hover para os links de navegação */
+  background-color: rgba(230, 240, 255, 0.685);
+  transform: scale(1.05); /* Aumenta o tamanho do link no hover */
+}
+
+/* Formulários */
+form {
+  /* Estilo para o formulário */
+  box-shadow: 0 4px 10px var(--shadow-color);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  padding: 20px;
+  background-color: var(--white-color);
+  border-radius: 10px;
+  width: 100%;
+  margin: 50px auto;
+}
+
+form div {
+  /* Estilo para o contêiner de cada campo */
+  display: flex;
+  flex-direction: column;
+  gap: 5px; /* Espaçamento entre label e input */
+}
+
+form input {
+  /* Estilo para os campos de entrada do formulário */
+  padding: 10px;
+  font-size: var(--font-size-base);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  width: 100%; /* Garantir que os inputs ocupem toda a largura do formulário */
+}
+
+form label {
+  /* Estilo para os rótulos (labels) dos campos */
+  font-weight: bold;
+  font-size: var(--font-size-base);
+  color: var(--text-color);
+}
+
+/* Estilo para os botões */
+.button-container button, .styled-button {
+  margin-bottom: 10px;
+  background-color: var(--primary-color);
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  font-size: var(--font-size-base);
+  border: none; /* Remove qualquer borda */
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Transições suaves */
+}
+
+/* Efeito de hover para os botões */
+.button-container button:hover, .styled-button:hover {
+  background-color: var(--secondary-color);
+  transform: scale(1.05); /* Aumenta o tamanho do botão no hover */
+}
+
+.button-container button:focus, .styled-button:focus {
+  outline: none; /* Remove o outline padrão de foco */
+  box-shadow: none; /* Remove qualquer sombra que o foco possa adicionar */
+}
+
+.styled-select {
+  background-color: var(--third-color);
+  color: white;
+  padding: 10px 15px;
+  font-size: var(--font-size-base);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  appearance: none;
+  text-align-last: center;
+}
+
+.styled-select:hover {
+  /* Efeito de hover para os selects */
+  background-color: var(--forth-color);
+}
+
+.styled-select:focus {
+  /* Estilo de foco para os selects */
+  outline: none;
+}
+
+/* Tabelas */
+.ListagemGeral, .table-container {
+  /* Estilo geral para tabelas */
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: var(--white-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 20px var(--shadow-color);
+  overflow-x: auto; /* Permite rolagem horizontal */
+  transition: all 0.3s ease-in-out;
+}
+
+.table-container {
+  /* Configuração para o layout das tabelas */
+  border-collapse: collapse;
+  font-size: var(--font-size-base);
+}
+
+.table-container th, .table-container td {
+  /* Estilo para as células da tabela */
+  padding: 16px;
+  text-align: left;
+  border-bottom: 2px solid #caf9ff;
+}
+
+.table-container th {
+  /* Estilo para os cabeçalhos das colunas */
+  background-color: var(--heading-color);
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  
+}
+
+.table-container td {
+  /* Estilo para as células de dados */
+  background-color: #ffffff;
+}
+
+.table-container tr:nth-child(even) td {
+  /* Estilo para as linhas pares da tabela */
+  background-color: #f9f9f9;
+}
+
+.table-container tr:hover td {
+  /* Efeito de hover para as células da tabela */
+  background-color: #e1fffb;
+}
+
+.table-container td div {
+  /* Estilo para o conteúdo dentro das células */
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #555;
+}
+
+.table-container tr td[colSpan="4"] {
+  /* Estilo para células que ocupam várias colunas */
+  text-align: center;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+}
+
+.table-container tr td[colSpan="4"]:first-child {
+  /* Estilo para a primeira célula que ocupa várias colunas */
+  font-style: italic;
+  color: var(--text-color);
+}
+
+/* Filtros */
+.filtros {
+  /* Estilo para os filtros de pesquisa */
+  margin-bottom: 15px;
+}
+
+.filtros select {
+  /* Estilo para os selects de filtro */
+  padding: 8px;
+  font-size: var(--font-size-base);
+  color: #ffffff;
+  border-radius: 4px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  /* Ajustes para telas pequenas (máximo 768px) */
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 8px 0;
+  }
+
+  nav ul li a {
+    padding: 10px 18px;
+    font-size: var(--font-size-small);
+  }
+
+  form {
+    padding: 15px;
+  }
+
+  form input {
+    font-size: var(--font-size-small);
+  }
+
+  .button-container button {
+    padding: 8px;
+    font-size: var(--font-size-small);
+  }
+
+  .ListagemGeral, .table-container {
+    padding: 15px;
+  }
+
+  .table-container th,
+  .table-container td {
+    font-size: var(--font-size-small);
+    padding: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.5rem; /* Ajuste o tamanho da fonte se necessário */
+    margin-top: 80px; /* Garantir que o título tenha espaço suficiente */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Ajustes para telas muito pequenas (máximo 480px) */
+  nav ul li {
+    margin: 10px 0;
+  }
+}
